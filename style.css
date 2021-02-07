@@ -1,0 +1,179 @@
+@font-face{
+    font-family: "metal";
+    src: url(font/Heavy\ Metal\ Blight.ttf);
+}
+span{
+    font-family: "metal";
+    color: #fff;
+    text-align: center;
+}
+body {
+    background-image: url(img/fondo.jpg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: "metal";
+}
+h1 {
+    color: #fff;
+    margin: 50px 0px;
+    display: block;
+    text-align: center;
+    font-size: 200px;
+    text-shadow: 0 0 20px #fff;
+}
+#fotos {
+    width: 100%;
+    margin: 5px 5px;
+}
+/*Para hacer que el conteneodr muestre elementos aunque estos sean flotantes*/
+#container:after { /*Todo lo que vaya despues del container tiene estas propiedades*/
+    content: "";
+    display: block;
+    height: 0px;
+    clear: both;
+}
+#container {
+    width: 90%;
+    margin: 0 auto;
+}
+/*Estructura de cada componente de la galería (imagen+descripcion)*/
+#container div {
+    width: 28%;
+    height: auto;
+    -webkit-transition:-webkit-transform 1s;
+    display: inline;
+    float: left;
+    margin: 0px 3% 0 0;
+    padding: 0px;
+}
+#container div img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0 10px rgb(255, 72, 0);
+    border: 5px solid rgb(175, 0, 0);
+}
+img {
+    width: 350px;
+    height: 350px;
+}
+/*Estructura de la descripcion para que por defecto no se muestre*/
+#container div img~span {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0;
+    -webkit-transition: opacity 0.65s;
+    margin: 0;
+    padding: 2px 5px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 10px  rgb(255, 72, 0);
+}
+/*Hacer que se muestre la descripcion al poner el cursor encima de la imagen*/
+#container div img:hover+span {
+    opacity: 1;
+}
+/*Se especifica que el comportamiento que tendrán las imágenes al posicionar el cursor encima del contenedor*/
+#container:hover div {
+    opacity: 0.2;
+    -webkit-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    transform: scale(0.7);
+}
+/*Se especifica el comportamiento de las imagenes seleccionadas*/
+#container:hover div:hover {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+/*Media Queries*/
+@media screen and (min-width:1200px){
+    #container {
+        width: 100%;
+        padding: 40px;
+    }
+    #container #imagen{
+        width: 20%;
+    }
+}
+@media screen and (max-width:1200px){
+    h1{
+        font-size: 130px;
+    }
+    #container {
+        width: 100%;
+        padding: 40px;
+    }
+    #container #imagen{
+        width: 20%;
+    }
+}
+@media screen and (max-width:1000px){
+    h1 {
+        font-size: 110px;
+    }
+    #container{
+        width: 95%;
+        padding: 30px;
+    }
+    #container #imagen{
+        width: 30%;
+    }
+}
+@media screen and (max-width:700px){
+    h1{
+        font-size: 60px;
+    }
+    #container {
+        width: 95%;
+        padding: 35px;
+    }
+    #container #imagen{
+        width: 28%;
+    }
+}
+@media screen and (max-width:541px){
+    body{
+        margin-left: 30px;
+    }
+    h1{
+        font-size:30px
+    }
+    #container{
+        width: 90%;
+        padding: 20px
+    }
+    #container #imagen{
+        width: 40%;
+    }
+}
+@media screen and (max-width: 375px){
+    body{
+        margin-left: 30px;
+    }
+    h1{
+        font-size:30px
+    }
+    #container{
+        width: 90%;
+    }
+    #container #imagen{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 425px){
+    body{
+        margin-left: 30px;
+    }
+    h1{
+        font-size:30px
+    }
+    #container{
+        width: 99%;
+    }
+    #container #imagen{
+        width: 90%;
+    }
+}
